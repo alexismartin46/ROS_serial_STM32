@@ -76,8 +76,8 @@ all: main-build
 main-build: rosserial_stm32_chatter.elf secondary-outputs
 
 # Tool invocations
-rosserial_stm32_chatter.elf rosserial_stm32_chatter.map: $(OBJS) $(USER_OBJS) C:\Users\alexmart57\OneDrive\ -\ ENSEA\ROS_workspace\rosserial_stm32_chatter\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "rosserial_stm32_chatter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\alexmart57\OneDrive - ENSEA\ROS_workspace\rosserial_stm32_chatter\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="rosserial_stm32_chatter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+rosserial_stm32_chatter.elf rosserial_stm32_chatter.map: $(OBJS) $(USER_OBJS) C:\Users\alexmart57\OneDrive\ -\ ENSEA\ROS_workspace\rosserial_stm32_chatter\STM32_project\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "rosserial_stm32_chatter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\alexmart57\OneDrive - ENSEA\ROS_workspace\rosserial_stm32_chatter\STM32_project\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="rosserial_stm32_chatter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
