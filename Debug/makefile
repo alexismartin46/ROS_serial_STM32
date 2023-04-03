@@ -50,34 +50,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := TEST_rosserial_stm32_chatter
+BUILD_ARTIFACT_NAME := rosserial_stm32_chatter
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-TEST_rosserial_stm32_chatter.elf \
+rosserial_stm32_chatter.elf \
 
 MAP_FILES += \
-TEST_rosserial_stm32_chatter.map \
+rosserial_stm32_chatter.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-TEST_rosserial_stm32_chatter.list \
+rosserial_stm32_chatter.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: TEST_rosserial_stm32_chatter.elf secondary-outputs
+main-build: rosserial_stm32_chatter.elf secondary-outputs
 
 # Tool invocations
-TEST_rosserial_stm32_chatter.elf TEST_rosserial_stm32_chatter.map: $(OBJS) $(USER_OBJS) C:\Users\alexmart57\OneDrive\ -\ ENSEA\ROS_workspace\TEST_rosserial_stm32_chatter\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-g++ -o "TEST_rosserial_stm32_chatter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\alexmart57\OneDrive - ENSEA\ROS_workspace\TEST_rosserial_stm32_chatter\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TEST_rosserial_stm32_chatter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+rosserial_stm32_chatter.elf rosserial_stm32_chatter.map: $(OBJS) $(USER_OBJS) C:\Users\alexmart57\OneDrive\ -\ ENSEA\ROS_workspace\rosserial_stm32_chatter\STM32G431RBTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-g++ -o "rosserial_stm32_chatter.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\alexmart57\OneDrive - ENSEA\ROS_workspace\rosserial_stm32_chatter\STM32G431RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="rosserial_stm32_chatter.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -86,14 +86,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-TEST_rosserial_stm32_chatter.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "TEST_rosserial_stm32_chatter.list"
+rosserial_stm32_chatter.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "rosserial_stm32_chatter.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) TEST_rosserial_stm32_chatter.elf TEST_rosserial_stm32_chatter.list TEST_rosserial_stm32_chatter.map default.size.stdout
+	-$(RM) default.size.stdout rosserial_stm32_chatter.elf rosserial_stm32_chatter.list rosserial_stm32_chatter.map
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)

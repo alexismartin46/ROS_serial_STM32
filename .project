@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>TEST_rosserial_stm32_chatter</name>
+	<name>rosserial_stm32_chatter</name>
 	<comment></comment>
 	<projects>
 	</projects>
